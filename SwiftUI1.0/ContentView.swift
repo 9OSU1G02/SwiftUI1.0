@@ -94,7 +94,6 @@ struct ContentView: View {
                         showFull = false
                     }
                 }))
-            Text("\(bottomState.height)").foregroundColor(Color.red)
         }
     }
 }

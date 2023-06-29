@@ -11,6 +11,12 @@
 		469650D22A4B197F00C8B21A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469650D12A4B197F00C8B21A /* ContentView.swift */; };
 		469650D42A4B198000C8B21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469650D32A4B198000C8B21A /* Assets.xcassets */; };
 		469650D72A4B198000C8B21A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469650D62A4B198000C8B21A /* Preview Assets.xcassets */; };
+		46BEB7402A4DC21C001E0473 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB73F2A4DC21C001E0473 /* Home.swift */; };
+		46BEB7422A4DCC2D001E0473 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB7412A4DCC2D001E0473 /* HomeView.swift */; };
+		46BEB7442A4DDBFC001E0473 /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB7432A4DDBFC001E0473 /* UpdateList.swift */; };
+		46BEB7462A4DDEA8001E0473 /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB7452A4DDEA8001E0473 /* UpdateDetail.swift */; };
+		46BEB7482A4DE080001E0473 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB7472A4DE080001E0473 /* UpdateStore.swift */; };
+		46BEB74A2A4DE470001E0473 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB7492A4DE470001E0473 /* TabBar.swift */; };
 		46E773002A4C8BAD008C2B09 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E772FF2A4C8BAD008C2B09 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +26,12 @@
 		469650D12A4B197F00C8B21A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		469650D32A4B198000C8B21A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		469650D62A4B198000C8B21A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		46BEB73F2A4DC21C001E0473 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		46BEB7412A4DCC2D001E0473 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		46BEB7432A4DDBFC001E0473 /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
+		46BEB7452A4DDEA8001E0473 /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
+		46BEB7472A4DE080001E0473 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
+		46BEB7492A4DE470001E0473 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		46E772FF2A4C8BAD008C2B09 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +68,12 @@
 				469650CF2A4B197F00C8B21A /* SwiftUI1_0App.swift */,
 				469650D12A4B197F00C8B21A /* ContentView.swift */,
 				46E772FF2A4C8BAD008C2B09 /* MenuView.swift */,
+				46BEB73F2A4DC21C001E0473 /* Home.swift */,
+				46BEB7412A4DCC2D001E0473 /* HomeView.swift */,
+				46BEB7432A4DDBFC001E0473 /* UpdateList.swift */,
+				46BEB7492A4DE470001E0473 /* TabBar.swift */,
+				46BEB7452A4DDEA8001E0473 /* UpdateDetail.swift */,
+				46BEB7472A4DE080001E0473 /* UpdateStore.swift */,
 				469650D32A4B198000C8B21A /* Assets.xcassets */,
 				469650D52A4B198000C8B21A /* Preview Content */,
 			);
@@ -140,8 +158,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BEB74A2A4DE470001E0473 /* TabBar.swift in Sources */,
+				46BEB7462A4DDEA8001E0473 /* UpdateDetail.swift in Sources */,
 				469650D22A4B197F00C8B21A /* ContentView.swift in Sources */,
 				46E773002A4C8BAD008C2B09 /* MenuView.swift in Sources */,
+				46BEB7442A4DDBFC001E0473 /* UpdateList.swift in Sources */,
+				46BEB7482A4DE080001E0473 /* UpdateStore.swift in Sources */,
+				46BEB7402A4DC21C001E0473 /* Home.swift in Sources */,
+				46BEB7422A4DCC2D001E0473 /* HomeView.swift in Sources */,
 				469650D02A4B197F00C8B21A /* SwiftUI1_0App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
