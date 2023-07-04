@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		460C38BA2A51417D00A0E4E2 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C38B92A51417D00A0E4E2 /* CourseList.swift */; };
+		467057892A546A9A001AE7A5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467057882A546A9A001AE7A5 /* LoginView.swift */; };
 		469650D02A4B197F00C8B21A /* SwiftUI1_0App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469650CF2A4B197F00C8B21A /* SwiftUI1_0App.swift */; };
 		469650D22A4B197F00C8B21A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469650D12A4B197F00C8B21A /* ContentView.swift */; };
 		469650D42A4B198000C8B21A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469650D32A4B198000C8B21A /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 		46BEB7462A4DDEA8001E0473 /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB7452A4DDEA8001E0473 /* UpdateDetail.swift */; };
 		46BEB7482A4DE080001E0473 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB7472A4DE080001E0473 /* UpdateStore.swift */; };
 		46BEB74A2A4DE470001E0473 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BEB7492A4DE470001E0473 /* TabBar.swift */; };
+		46D04B1C2A532A60004C4649 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D04B1B2A532A60004C4649 /* Buttons.swift */; };
 		46D41BDB2A4F22D9006572B9 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D41BDA2A4F22D9006572B9 /* Modifier.swift */; };
 		46D41BDD2A4F2491006572B9 /* Work_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 46D41BDC2A4F2490006572B9 /* Work_Sans */; };
 		46E773002A4C8BAD008C2B09 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E772FF2A4C8BAD008C2B09 /* MenuView.swift */; };
@@ -28,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		460C38B92A51417D00A0E4E2 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
+		467057882A546A9A001AE7A5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		469650CC2A4B197F00C8B21A /* SwiftUI1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469650CF2A4B197F00C8B21A /* SwiftUI1_0App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI1_0App.swift; sourceTree = "<group>"; };
 		469650D12A4B197F00C8B21A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		46BEB7452A4DDEA8001E0473 /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
 		46BEB7472A4DE080001E0473 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		46BEB7492A4DE470001E0473 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		46D04B1B2A532A60004C4649 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		46D41BDA2A4F22D9006572B9 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 		46D41BDC2A4F2490006572B9 /* Work_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Work_Sans; sourceTree = "<group>"; };
 		46D41BDE2A4F24A7006572B9 /* SwiftUI1-0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftUI1-0-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -90,6 +94,8 @@
 				46BEB7412A4DCC2D001E0473 /* HomeView.swift */,
 				46D41BDA2A4F22D9006572B9 /* Modifier.swift */,
 				46BEB7432A4DDBFC001E0473 /* UpdateList.swift */,
+				46D04B1B2A532A60004C4649 /* Buttons.swift */,
+				467057882A546A9A001AE7A5 /* LoginView.swift */,
 				46BEB7492A4DE470001E0473 /* TabBar.swift */,
 				46BEB7452A4DDEA8001E0473 /* UpdateDetail.swift */,
 				46BEB7472A4DE080001E0473 /* UpdateStore.swift */,
@@ -183,6 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D04B1C2A532A60004C4649 /* Buttons.swift in Sources */,
 				469B6A192A4F09C200F1CFD3 /* RingView.swift in Sources */,
 				46EDA9662A51CEE100987EBD /* BlurView.swift in Sources */,
 				46BEB74A2A4DE470001E0473 /* TabBar.swift in Sources */,
@@ -195,7 +202,8 @@
 				46BEB7482A4DE080001E0473 /* UpdateStore.swift in Sources */,
 				46BEB7402A4DC21C001E0473 /* Home.swift in Sources */,
 				46EDA95D2A51C3F400987EBD /* CourseDetail.swift in Sources */,
- 				46BEB7422A4DCC2D001E0473 /* HomeView.swift in Sources */,
+				46BEB7422A4DCC2D001E0473 /* HomeView.swift in Sources */,
+				467057892A546A9A001AE7A5 /* LoginView.swift in Sources */,
 				469650D02A4B197F00C8B21A /* SwiftUI1_0App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
