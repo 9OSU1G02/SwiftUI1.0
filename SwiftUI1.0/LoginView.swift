@@ -15,6 +15,7 @@ struct LoginView: View {
     @State var password: String = ""
     @State var isFocused: Bool = false
     @State var showAlert: Bool = false
+    @State var isLoading: Bool = false
     var alertMessage = ""
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -81,7 +82,10 @@ struct LoginView: View {
                     Button {
                         showAlert = true
                         hideKeyboard()
-                        isFocused = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            isFocused = false
+                            isLoading = true
+                        }
                     } label: {
                         Text("Login").foregroundColor(.black)
                     }
@@ -104,6 +108,9 @@ struct LoginView: View {
             .onTapGesture {
                 isFocused = false
                 hideKeyboard()
+            }
+            if isLoading {
+                LoadingView()
             }
         }
     }
