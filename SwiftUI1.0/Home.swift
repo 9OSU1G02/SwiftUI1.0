@@ -11,6 +11,7 @@ struct Home: View {
     @State var showProfile = false
     @State var viewState: CGSize = .zero
     @State var showContent = false
+    @EnvironmentObject var user: UserStore
     var body: some View {
         ZStack {
             Color("background2")
@@ -28,7 +29,7 @@ struct Home: View {
                 .scaleEffect(showProfile ? 0.9 : 1)
                 .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0), value: showProfile)
                 .ignoresSafeArea()
-            MenuView()
+            MenuView(showProfile: $showProfile)
                 .background(Color.black.opacity(0.00001))
                 .offset(y: showProfile ? 0 : screen.height)
                 .offset(y: viewState.height)
@@ -51,6 +52,26 @@ struct Home: View {
                         viewState = .zero
                     }
                 })
+            if user.showLogin {
+                ZStack {
+                    LoginView()
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Image(systemName: "xmark")
+                                .frame(width: 36, height: 36)
+                                .foregroundColor(.white)
+                                .background(Color.black)
+                                .clipShape(Circle())
+                        }
+                        Spacer()
+                    }
+                    .padding()
+                    .onTapGesture {
+                        user.showLogin = false
+                    }
+                }
+            }
             if showContent {
                 BlurView(style: .systemMaterial).ignoresSafeArea()
                 ContentView()
@@ -77,20 +98,39 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        Home().environmentObject(UserStore())
     }
 }
 
 struct AvatarView: View {
     @Binding var showProfile: Bool
+    @EnvironmentObject var user: UserStore
     var body: some View {
-        Button {
-            showProfile.toggle()
-        } label: {
-            Image("Avatar")
-                .resizable()
-                .frame(width: 36, height: 36)
-                .clipShape(Circle())
+        VStack {
+            if user.isLogged {
+                Button {
+                    showProfile.toggle()
+                } label: {
+                    Image("Avatar")
+                        .resizable()
+                        .frame(width: 36, height: 36)
+                        .clipShape(Circle())
+                }
+            } else {
+                Button {
+                    user.showLogin.toggle()
+                } label: {
+                    Image(systemName: "person")
+                        .foregroundColor(.primary)
+                        .font(.system(size: 16, weight: .medium))
+                        .frame(width: 36, height: 36)
+                        .background(Color("background3"))
+                        .clipShape(Circle())
+                        .shadow(color: .black.opacity(0.1), radius: 1, x: 0, y: 1)
+                        .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 10)
+                }
+
+            }
         }
     }
 }

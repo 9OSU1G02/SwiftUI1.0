@@ -16,6 +16,7 @@ struct LoginView: View {
     @State var isFocused: Bool = false
     @State var showAlert: Bool = false
     @State var isLoading: Bool = false
+    @EnvironmentObject var user: UserStore
     var alertMessage = ""
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
@@ -80,11 +81,13 @@ struct LoginView: View {
                         .font(.subheadline)
                     Spacer()
                     Button {
-                        showAlert = true
+                        //showAlert = true
+                        isLoading = true
                         hideKeyboard()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                             isFocused = false
-                            isLoading = true
+                            user.isLogged = true
+                            user.showLogin = false
                         }
                     } label: {
                         Text("Login").foregroundColor(.black)

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MenuView: View {
+    @EnvironmentObject var user: UserStore
+    @Binding var showProfile: Bool
     var body: some View {
         VStack {
             Spacer()
@@ -25,6 +27,10 @@ struct MenuView: View {
                 MenuRow(title: "Account", icon: "gear")
                 MenuRow(title: "Billing", icon: "creditcard")
                 MenuRow(title: "Sign out", icon: "person.crop.circle")
+                    .onTapGesture {
+                        user.isLogged = false
+                        showProfile = false
+                    }
             }
             .frame(height: 300)
             .frame(maxWidth: .infinity)
@@ -63,6 +69,6 @@ struct MenuRow: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(showProfile: .constant(true))
     }
 }

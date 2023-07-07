@@ -10,7 +10,7 @@ import Lottie
 struct LoadingView: View {
     var body: some View {
         VStack {
-            LottieView(filename: "loading")
+            LottieView(filename: "success")
                 .frame(width: 200, height: 200)
         }
     }
