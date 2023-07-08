@@ -21,7 +21,8 @@ struct ContentView: View {
                 .offset(y: showCard ? -200 : 0)
                 .animation(.default.delay(0.1))
             BackCardView()
-                .frame(width: showCard ? 300 : 340, height: 220)
+                .frame(maxWidth: showCard ? 300 : 340)
+                .frame(height: 220)
                 .background(Color(show ? "card3" : "card4"))
                 .cornerRadius(20)
                 .shadow(radius: 20)
@@ -35,7 +36,8 @@ struct ContentView: View {
                 .blendMode(.hardLight)
                 .animation(.easeInOut(duration: 0.5))
             BackCardView()
-                .frame(width: 340, height: 220)
+                .frame(maxWidth: 340)
+                .frame(height: 220)
                 .background(Color(show ? "card4" : "card3"))
                 .cornerRadius(20)
                 .shadow(radius: 20)
@@ -50,9 +52,10 @@ struct ContentView: View {
                 .blendMode(.hardLight)
                 .animation(.easeInOut(duration: 0.3))
             CardView()
-                .frame(width: showCard ? 375 : 340, height: 220)
+                .frame(maxWidth: showCard ? 375 : 340)
+                .frame(height: 220)
                 .background(Color.black)
-                //.cornerRadius(20)
+                // .cornerRadius(20)
                 .clipShape(RoundedRectangle(cornerRadius: showCard ? 30 : 20, style: .continuous))
                 .shadow(radius: 20)
                 .offset(x: viewState.width, y: viewState.height)
@@ -69,31 +72,34 @@ struct ContentView: View {
                     viewState = .zero
                     show = false
                 })
-            BottomCardView(show: $showCard)
-                .offset(x: 0, y: showCard ? 460 : 1000)
-                .offset(y: bottomState.height)
-                .blur(radius: show ? 20 : 0)
-                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-                .gesture(DragGesture().onChanged({ value in
-                    bottomState = value.translation
-                    if showFull {
-                        bottomState.height -= 300
-                    }
-                    if bottomState.height < -300 {
-                        bottomState.height = -300
-                    }
-                }).onEnded({ value in
-                    if bottomState.height > 50 {
-                        showCard = false
-                    }
-                    if(bottomState.height < -100 && !showFull) || (bottomState.height < -250 && showFull) {
-                        bottomState.height = -300
-                        showFull = true
-                    } else {
-                        bottomState = .zero
-                        showFull = false
-                    }
-                }))
+            GeometryReader { proxy in
+                BottomCardView(show: $showCard)
+                    .offset(x: 0, y: showCard ? proxy.size.height / 2 : proxy.size.height + proxy.safeAreaInsets.top + proxy.safeAreaInsets.bottom)
+                    .offset(y: bottomState.height)
+                    .blur(radius: show ? 20 : 0)
+                    .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+                    .gesture(DragGesture().onChanged { value in
+                        bottomState = value.translation
+                        if showFull {
+                            bottomState.height -= 300
+                        }
+                        if bottomState.height < -300 {
+                            bottomState.height = -300
+                        }
+                    }.onEnded { _ in
+                        if bottomState.height > 50 {
+                            showCard = false
+                        }
+                        if (bottomState.height < -100 && !showFull) || (bottomState.height < -250 && showFull) {
+                            bottomState.height = -300
+                            showFull = true
+                        } else {
+                            bottomState = .zero
+                            showFull = false
+                        }
+                    })
+            }
+            //.ignoresSafeArea()
         }
     }
 }
@@ -148,6 +154,9 @@ struct TitleView: View {
             }
             .padding()
             Image("Background1")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 375)
             Spacer()
         }
     }
@@ -183,9 +192,10 @@ struct BottomCardView: View {
         }
         .padding(.top, 8)
         .padding(.horizontal, 20)
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: 720)
         .background(BlurView(style: .systemUltraThinMaterial))
         .cornerRadius(30)
         .shadow(radius: 20)
+        .frame(maxWidth: .infinity)
     }
 }

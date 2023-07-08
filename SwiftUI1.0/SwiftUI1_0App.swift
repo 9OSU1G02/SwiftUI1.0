@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI1_0App: App {
     var body: some Scene {
         WindowGroup {
-            Home()
+            TabBar()
                 .environmentObject(UserStore())
         }
     }
